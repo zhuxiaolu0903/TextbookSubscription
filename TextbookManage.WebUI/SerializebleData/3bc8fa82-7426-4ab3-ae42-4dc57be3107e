@@ -1,0 +1,27 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:FunctionModel id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/CPMis.Model.Sys/CPMis.Model%2C%20Version%3D1.0.0.0%2C%20Culture%3Dneutral%2C%20PublicKeyToken%3Dnull">
+<_userFunctionID xsi:null="1"/>
+<_functionID id="ref-3">10090000</_functionID>
+<_functionName id="ref-4">学生缴费</_functionName>
+<_functionURL id="ref-5"></_functionURL>
+<BaseModel_x002B__archiveFlag id="ref-6">0</BaseModel_x002B__archiveFlag>
+<BaseModel_x002B__dataSign xsi:null="1"/>
+<BaseModel_x002B__deleteFlag href="#ref-6"/>
+<BaseModel_x002B__id>
+<_a>-1408595088</_a>
+<_b>26351</_b>
+<_c>19967</_c>
+<_d>168</_d>
+<_e>31</_e>
+<_f>49</_f>
+<_g>79</_g>
+<_h>102</_h>
+<_i>200</_i>
+<_j>255</_j>
+<_k>32</_k>
+</BaseModel_x002B__id>
+<BaseModel_x002B__checkFlag>false</BaseModel_x002B__checkFlag>
+</a1:FunctionModel>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
