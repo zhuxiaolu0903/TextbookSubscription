@@ -5,8 +5,6 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookSubscription.ViewModels", "TextbookSubscription.ViewModels\TextbookSubscription.ViewModels.csproj", "{E90BD2FA-796E-46C6-AD7E-A47F84941146}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookSubscription.Infrastructure", "TextbookManage.Infrastructure\TextbookSubscription.Infrastructure.csproj", "{E901854E-A721-4E21-98E9-AF2C963CF07B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookSubscription.IApplication", "TextbookSubscription.IApplication\TextbookSubscription.IApplication.csproj", "{E00E2716-3BA3-4E22-BC32-50EDCEDD88A9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookSubscription.Application", "TextbookSubscription.Application\TextbookSubscription.Application.csproj", "{7097212D-FA39-4F7D-AF7E-A2C545B0C52E}"
@@ -19,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookSubscription.Reposi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookManage.WebUI", "TextbookManage.WebUI\TextbookManage.WebUI.csproj", "{931413E7-2EF4-468C-911F-37D655B8184B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextbookSubscription.Infrastructure", "TextbookSubscription.Infrastructure\TextbookSubscription.Infrastructure.csproj", "{E901854E-A721-4E21-98E9-AF2C963CF07B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +29,6 @@ Global
 		{E90BD2FA-796E-46C6-AD7E-A47F84941146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E90BD2FA-796E-46C6-AD7E-A47F84941146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E90BD2FA-796E-46C6-AD7E-A47F84941146}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E901854E-A721-4E21-98E9-AF2C963CF07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E901854E-A721-4E21-98E9-AF2C963CF07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E901854E-A721-4E21-98E9-AF2C963CF07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E901854E-A721-4E21-98E9-AF2C963CF07B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E00E2716-3BA3-4E22-BC32-50EDCEDD88A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E00E2716-3BA3-4E22-BC32-50EDCEDD88A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E00E2716-3BA3-4E22-BC32-50EDCEDD88A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -57,6 +53,10 @@ Global
 		{931413E7-2EF4-468C-911F-37D655B8184B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{931413E7-2EF4-468C-911F-37D655B8184B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{931413E7-2EF4-468C-911F-37D655B8184B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E901854E-A721-4E21-98E9-AF2C963CF07B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E901854E-A721-4E21-98E9-AF2C963CF07B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E901854E-A721-4E21-98E9-AF2C963CF07B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E901854E-A721-4E21-98E9-AF2C963CF07B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

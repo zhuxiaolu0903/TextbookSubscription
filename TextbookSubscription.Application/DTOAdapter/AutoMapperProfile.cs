@@ -9,7 +9,7 @@
         /// <summary>
         /// 配置映射关系
         /// </summary>
-        public AutoMapperProfile()
+        protected override void Configure()
         {
             //Term => TermView
             CreateMap<Term, TermView>()

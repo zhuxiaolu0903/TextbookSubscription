@@ -63,11 +63,5 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\TextbookManage.Infrastructure\TextbookSubscription.Infrastructure.csproj">
-      <Project>{e901854e-a721-4e21-98e9-af2c963cf07b}</Project>
-      <Name>TextbookSubscription.Infrastructure</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
