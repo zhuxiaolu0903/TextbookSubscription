@@ -10,6 +10,7 @@ using TextbookSubscription.Repository;
 using TextbookSubscription.IApplication;
 using TextbookSubscription.Application;
 using TextbookSubscription.Infrastructure.InterceptionBehaviors;
+using AutoMapper;
 
 namespace TextbookManage.WebUI
 {
