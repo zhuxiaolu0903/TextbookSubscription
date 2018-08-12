@@ -13,8 +13,8 @@
         {
             //Term => TermView
             CreateMap<Term, TermView>()
-                .ForMember(t => t.TermID, opt => opt.MapFrom(tv => tv.TermNum))
-                .ForMember(t => t.Term, opt => opt.MapFrom(tv => tv.TermName));
+                .ForMember(tv => tv.TermID, opt => opt.MapFrom(t => t.TermNum))
+                .ForMember(tv => tv.Term, opt => opt.MapFrom(tv => tv.TermName));
         }
     }
 }
