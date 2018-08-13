@@ -56,10 +56,6 @@
     <Compile Include="TermAppl.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TexrtbookSubscription.Repository\TextbookSubscription.Repository.csproj">
-      <Project>{e47fcf34-a2e6-4c3f-a190-89cb80fb2a1f}</Project>
-      <Name>TextbookSubscription.Repository</Name>
-    </ProjectReference>
     <ProjectReference Include="..\TextbookSubscription.Domain\TextbookSubscription.Domain.csproj">
       <Project>{c3468b9d-0b6a-4a03-a60e-c9be1589bcdd}</Project>
       <Name>TextbookSubscription.Domain</Name>

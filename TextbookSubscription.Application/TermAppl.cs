@@ -23,7 +23,8 @@
 
         public TermView GetCurrent()
         {
-            throw new System.NotImplementedException();
+            var term = _rep.Single(t => t.IsCurrentTerm == "1");
+            return _adpater.Adapt<TermView>(term);
         }
     }
 }
