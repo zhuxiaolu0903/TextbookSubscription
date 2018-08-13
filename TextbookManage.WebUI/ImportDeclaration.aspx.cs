@@ -8,33 +8,60 @@ using TextbookSubscription.Infrastructure.ServiceLocators;
 
 namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
 {
-    public partial class TextbookImport : System.Web.UI.Page
+    public partial class ImportDeclaration : System.Web.UI.Page
     {
         private ITermAppl _appl = ServiceLocator.Current.GetInstance<ITermAppl>();
+
+
+        /// <summary>
+        /// 页面加载方法
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 GdStudentDeclare.DoDataBind();
                 //学年学期视图
-                ComBoxTerm();
+                ComBoxTerm_Student();
+                ComBoxTerm_Teacher();
             }
         }
-        protected void ComBoxTerm()
+
+        /// <summary>
+        /// 获取学生界面学年学期的下拉框数据
+        /// </summary>
+        protected void ComBoxTerm_Student()
+        {
+            var list = _appl.GetAll();
+            cmb_STerm.DataSource = list;
+            cmb_STerm.DataBind();
+        }
+
+        /// <summary>
+        /// 获取教师界面学年学期的下拉框数据
+        /// </summary>
+        protected void ComBoxTerm_Teacher()
         {
 
             var list = _appl.GetAll();
-            cmb_Term.DataSource = list;
-            cmb_Term.DataBind();
+            cmb_TTerm.DataSource = list;
+            cmb_TTerm.DataBind();
         }
 
+        /// <summary>
+        /// 处理AJAX请求
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void RadAjaxManager1_OnAjaxRequest(object sender, AjaxRequestEventArgs e)
         {
             var argument = e.Argument;
             switch (argument)
             {
                 case "Delete":
-                    DeleteTextbook();
+                    //DeleteTextbook();
                     break;
                 case "Help":
                     //OpenHelpFile("/Help/SystemManage/系统管理.htm");
@@ -45,46 +72,53 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
             }
         }
 
-
-        private void DeleteTextbook()
-        {
-            ////取出选中的记录
-            //SaveCheckedState();
-            //var data = GdStudentDeclare.GetAllCheckedDataList<TextbookView>();
-            //if (data.Count > 0)
-            //{
-            //    //删除
-            //    var result = _appl.Remove(data);
-            //    CPMis.Web.WebClient.ScriptManager.Alert(result.Message);
-            //    GdStudentDeclare.DoDataBind();
-            //}
-            //else
-            //{
-            //    //客户端消息
-            //    CPMis.Web.WebClient.ScriptManager.Alert("还没有选择待删除的记录!");
-            //}
-        }
-
+        /// <summary>
+        /// 保留CheckBox的状态
+        /// </summary>
         private void SaveCheckedState()
         {
             //GdStudentDeclare.PersistCheckState<TextbookView>();
         }
 
+        /// <summary>
+        /// 打开新窗口方法一，有参数
+        /// </summary>
+        /// <param name="url"></param>
+        /// <param name="textbookId"></param>
         private void OpenNewWindow(string url, string textbookId)
         {
             var path = $"{url}?TextbookId={textbookId}";
             CPMis.Web.WebClient.ScriptManager.OpenRadWindow(path, "RadWindow1");
         }
 
+        /// <summary>
+        /// 打开新窗口方法二，没有参数
+        /// </summary>
+        /// <param name="url"></param>
+        private void OpenNewWindow(string url)
+        {
+            CPMis.Web.WebClient.ScriptManager.OpenRadWindow(url, "RadWindow2");
+        }
+
+        /// <summary>
+        /// 点击查询按钮事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void BtnQuery_OnClick(object sender, EventArgs e)
         {
 
-            var data = cmb_Term.DataSource;
+            var Sdata = cmb_STerm.DataSource;
+            var Tdata = cmb_TTerm.DataSource;
             //GdStudentDeclare.DoDataBind();
         }
 
 
-
+        /// <summary>
+        /// Grid数据绑定之前的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GdStudentDeclare_OnBeforeDataBind(object sender, EventArgs e)
         {
             IList<ImportStudentDeclarationView> list = new List<ImportStudentDeclarationView>();
@@ -111,16 +145,44 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
             GdStudentDeclare.DataSource = list;
         }
 
+        /// <summary>
+        /// 单元格链接事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GdStudentDeclare_OnItemCommand(object sender, GridCommandEventArgs e)
         {
-
+            var key = e.CommandName;
+            if (!(e.Item is GridDataItem)) return;
+            var dataItem = (GridDataItem)e.Item;
+            var id = dataItem["TextbookId"].Text;
+            var isNotNull = !string.IsNullOrWhiteSpace(id);
+            var isNotEmpty = !string.Equals(id, Guid.Empty.ToString());
+            if (key.Equals("ShowTextbook") && isNotNull && isNotEmpty)//显示教材详情
+            {
+                OpenNewWindow("WindowForMessage/TextbookDetailMessage.aspx", id);
+            }
+            if (key.Equals("ShowClass"))
+            {
+                CPMis.Web.WebClient.ScriptManager.OpenRadWindow("WindowForMessage/TeachingClassDetail.aspx", "RadWindow2");
+            }
         }
 
+        /// <summary>
+        /// 页面索引改变之前的事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void GdStudentDeclare_OnBeforePageIndexChanged(object sender, EventArgs e)
         {
             SaveCheckedState();
         }
 
+        /// <summary>
+        /// CheckBox状态改变事件
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void ChkAll_OnCheckedChanged(object sender, EventArgs e)
         {
             var control = sender as CPMisCheckBox;

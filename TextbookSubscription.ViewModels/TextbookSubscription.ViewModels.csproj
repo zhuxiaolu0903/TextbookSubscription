@@ -52,6 +52,7 @@
     <Compile Include="NewTeacherDeclarationView.cs" />
     <Compile Include="NewTextbookView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryTextbookByIsbnView.cs" />
     <Compile Include="QueryTextbookView.cs" />
     <Compile Include="SchoolView.cs" />
     <Compile Include="ImportStudentDeclarationView.cs" />
