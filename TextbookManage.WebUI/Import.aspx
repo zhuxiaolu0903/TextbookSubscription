@@ -9,11 +9,15 @@
     <style>
     
     .upload{
-
-        width:100%;
+        width:350px;
         height:100px;
         margin:20px 0 40px 40px;
-        border:1px solid red;
+    }
+    .box{
+        width:300px;
+        height:60px;
+        margin:20px 0 40px 0;
+        border:4px ridge #d6e4f4;
     }
 
     </style>
@@ -31,17 +35,15 @@
         <telerik:RadFormDecorator ID="RadFormDecorator1" runat="server" DecoratedControls="All">
         </telerik:RadFormDecorator>
         <div>
-                <br />
-<%--                <asp:FileUpload CssClass="file" ID="FileUpload2"  runat="server" />
-                <cp:CPMisButton  ID="BtnUpload" runat="server" Text="上传" OnClick="BtnUpload_Click"  SkinID="Auto"/>
-                <hr />
-                <cp:CPMisLabel ID="LabMessage1" runat="server" ForeColor="red" SkinID="AutoSize" /><br />
-                <cp:CPMisLabel ID="LabMessage2" runat="server" SkinID="AutoSize" />--%>
+            <br />
             <div class="upload">
                 <asp:FileUpload ID="FileUpload1" style="background-color:transparent"  runat="server" />
                 <cp:CPMisButton ID="CPMisButton1" runat="server" Text="上传" OnClick="BtnUpload_Click"  SkinID="Auto"/>
-                <cp:CPMisLabel ID="LabMessage1" runat="server" ForeColor="red" SkinID="AutoSize" /><br />
-                <cp:CPMisLabel ID="LabMessage2" runat="server" SkinID="AutoSize" />
+                <div class="box">
+                    <cp:CPMisLabel ID="LabMessage1" runat="server" ForeColor="red" SkinID="AutoSize" /><br />
+                    <cp:CPMisLabel ID="LabMessage2" runat="server" SkinID="AutoSize" />
+                </div>
+                
             </div>
                
 

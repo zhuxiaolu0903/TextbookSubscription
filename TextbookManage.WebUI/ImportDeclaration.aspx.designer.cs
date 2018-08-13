@@ -10,7 +10,7 @@
 namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1 {
     
     
-    public partial class TextbookImport {
+    public partial class ImportDeclaration {
         
         /// <summary>
         /// form1 控件。
@@ -148,13 +148,13 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1 {
         protected global::CPMis.Web.WebControls.CPMisLabel CPMisLabel4;
         
         /// <summary>
-        /// cmb_Term 控件。
+        /// cmb_STerm 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisComboBox cmb_Term;
+        protected global::CPMis.Web.WebControls.CPMisComboBox cmb_STerm;
         
         /// <summary>
         /// cbtnQuery 控件。
@@ -184,13 +184,13 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1 {
         protected global::CPMis.Web.WebControls.CPMisPageView GdTeacherImport;
         
         /// <summary>
-        /// div2 控件。
+        /// div1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div1;
         
         /// <summary>
         /// CPMisLabel1 控件。
@@ -202,31 +202,13 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1 {
         protected global::CPMis.Web.WebControls.CPMisLabel CPMisLabel1;
         
         /// <summary>
-        /// CPMisTextBox1 控件。
+        /// cmb_TTerm 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisTextBox CPMisTextBox1;
-        
-        /// <summary>
-        /// CPMisLabel2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisLabel CPMisLabel2;
-        
-        /// <summary>
-        /// CPMisTextBox2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisTextBox CPMisTextBox2;
+        protected global::CPMis.Web.WebControls.CPMisComboBox cmb_TTerm;
         
         /// <summary>
         /// CPMisButton1 控件。
@@ -236,6 +218,15 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1 {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::CPMis.Web.WebControls.CPMisButton CPMisButton1;
+        
+        /// <summary>
+        /// GdTeachertDeclare 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::CPMis.Web.WebControls.CPMisGrid GdTeachertDeclare;
         
         /// <summary>
         /// RadWindowManager1 控件。

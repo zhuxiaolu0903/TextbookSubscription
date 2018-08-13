@@ -17,17 +17,17 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
         }
         protected void BtnUpload_Click(object sender, EventArgs e)
         {
-            String savePath = Server.MapPath("~/Import/");
+            String savePath = Server.MapPath("~/ExcelName/");
             if (FileUpload1.HasFile)
             {
                 String fileName = FileUpload1.FileName;
                 savePath += fileName;
                 FileUpload1.SaveAs(savePath);
-                LabMessage1.Text = "Your file was saved as " + fileName;
+                LabMessage1.Text = fileName + "文件上传成功";
             }
             else
             {
-                LabMessage1.Text = "You did not specify a file to upload.";
+                LabMessage1.Text = "文件上传失败";
             }
         }
     }
