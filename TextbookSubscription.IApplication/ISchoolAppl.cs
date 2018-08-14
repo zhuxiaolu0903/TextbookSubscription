@@ -13,5 +13,13 @@ namespace TextbookSubscription.IApplication
         /// <returns></returns>
         [Cache(CacheMethod.Get)]
         IEnumerable<SchoolView> GetAll();
+
+        /// <summary>
+        /// 获取学院ID
+        /// </summary>
+        /// <param name="schoolName"></param>
+        /// <returns></returns>
+        [Cache(CacheMethod.Get)]
+        string GetSchoolID(string schoolName);
     }
 }

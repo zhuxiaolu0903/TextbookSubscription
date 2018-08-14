@@ -9,7 +9,7 @@
         /// <summary>
         /// 数据标识
         /// </summary>
-        public char DataSign { get; set; }
+        public string DataSign { get; set; }
 
         /// <summary>
         /// 申报ID
@@ -76,7 +76,7 @@
         /// <summary>
         /// 需要教材
         /// </summary>
-        public char NeedTextbook { get; set; }
+        public string NeedTextbook { get; set; }
 
         /// <summary>
         /// 备注
