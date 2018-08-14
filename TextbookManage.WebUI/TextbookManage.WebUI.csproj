@@ -282,6 +282,8 @@
     <Content Include="App_Themes\CPMisTheme\DatePicker.skin" />
     <Content Include="App_Themes\CPMisTheme\OnFileUpdate.skin" />
     <Content Include="App_Themes\CPMisTheme\ReportViewer.skin" />
+    <Content Include="Modify.aspx" />
+    <Content Include="ModifyDeclaration.aspx" />
     <Content Include="TeachingClassDetail.aspx" />
     <Content Include="TextbookImport.aspx" />
     <None Include="packages.config" />
@@ -438,6 +440,20 @@
     <Compile Include="Import.aspx.designer.cs">
       <DependentUpon>Import.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Modify.aspx.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modify.aspx.designer.cs">
+      <DependentUpon>Modify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyDeclaration.aspx.cs">
+      <DependentUpon>ModifyDeclaration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ModifyDeclaration.aspx.designer.cs">
+      <DependentUpon>ModifyDeclaration.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeachingClassDetail.aspx.cs">
       <DependentUpon>TeachingClassDetail.aspx</DependentUpon>
@@ -456,7 +472,9 @@
     <Compile Include="UnityBootstrapper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AppSettings.config" />
+    <Content Include="AppSettings.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

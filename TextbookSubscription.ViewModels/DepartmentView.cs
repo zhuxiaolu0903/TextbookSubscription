@@ -3,7 +3,7 @@
     using System;
 
     [Serializable]
-    class DepartmentView : BaseViewModel
+    public class DepartmentView : BaseViewModel
     {
         /// <summary>
         /// 学院ID 

@@ -146,3 +146,184 @@ Source value:
    在 TextbookSubscription.Application.DTOAdapter.AutoMapperTypeAdapter.Adapt[TTarget](IEnumerable`1 source) 位置 D:\GitRepository\TextbookSubscription\TextbookSubscription.Application\DTOAdapter\AutoMapperTypeAdapter.cs:行号 78
    在 TextbookSubscription.Application.TermAppl.GetAll() 位置 D:\GitRepository\TextbookSubscription\TextbookSubscription.Application\TermAppl.cs:行号 21
    在 DynamicModule.ns.Wrapped_ITermAppl_adac006f0fdb446c8783f687c80fc728.<GetAll_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-12 16:06:33,849 [8] ERROR ExceptionLogger - Exception caught
+System.Data.Entity.Core.ProviderIncompatibleException: An error occurred accessing the database. This usually means that the connection to the database failed. Check that the connection string is correct and that the appropriate DbContext constructor is being used to specify it or find it in the application's config file. See http://go.microsoft.com/fwlink/?LinkId=386386 for information on DbContext and connections. See the inner exception for details of the failure. ---> System.Data.Entity.Core.ProviderIncompatibleException: The provider did not return a ProviderManifestToken string. ---> System.Data.SqlClient.SqlException: 在与 SQL Server 建立连接时出现与网络相关的或特定于实例的错误。未找到或无法访问服务器。请验证实例名称是否正确并且 SQL Server 已配置为允许远程连接。 (provider: SQL Network Interfaces, error: 26 - 定位指定的服务器/实例时出错)
+   在 System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling, SqlAuthenticationProviderManager sqlAuthProviderManager)
+   在 System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   在 System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   在 System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   在 System.Data.SqlClient.SqlConnection.Open()
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.<Open>b__38(DbConnection t, DbConnectionInterceptionContext c)
+   在 System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext](TTarget target, Action`2 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   在 System.Data.Entity.Infrastructure.Interception.DbConnectionDispatcher.Open(DbConnection connection, DbInterceptionContext interceptionContext)
+   在 System.Data.Entity.SqlServer.SqlProviderServices.<>c__DisplayClass31.<UsingConnection>b__2f()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.<>c__DisplayClass1.<Execute>b__0()
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   在 System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute(Action operation)
+   在 System.Data.Entity.SqlServer.SqlProviderServices.UsingConnection(DbConnection sqlConnection, Action`1 act)
+   在 System.Data.Entity.SqlServer.SqlProviderServices.UsingMasterConnection(DbConnection sqlConnection, Action`1 act)
+   在 System.Data.Entity.SqlServer.SqlProviderServices.GetDbProviderManifestToken(DbConnection connection)
+   在 System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Core.Common.DbProviderServices.GetProviderManifestToken(DbConnection connection)
+   在 System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Data.Entity.Utilities.DbProviderServicesExtensions.GetProviderManifestTokenChecked(DbProviderServices providerServices, DbConnection connection)
+   在 System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.<>c__DisplayClass1.<ResolveManifestToken>b__0(Tuple`3 k)
+   在 System.Collections.Concurrent.ConcurrentDictionary`2.GetOrAdd(TKey key, Func`2 valueFactory)
+   在 System.Data.Entity.Infrastructure.DefaultManifestTokenResolver.ResolveManifestToken(DbConnection connection)
+   在 System.Data.Entity.Utilities.DbConnectionExtensions.GetProviderInfo(DbConnection connection, DbProviderManifest& providerManifest)
+   在 System.Data.Entity.DbModelBuilder.Build(DbConnection providerConnection)
+   在 System.Data.Entity.Internal.LazyInternalContext.CreateModel(LazyInternalContext internalContext)
+   在 System.Data.Entity.Internal.RetryLazy`2.GetValue(TInput input)
+   在 System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   在 System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   在 System.Data.Entity.Internal.Linq.InternalSet`1.GetEnumerator()
+   在 System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   在 System.Linq.Parallel.ParallelEnumerableWrapper`1.GetEnumerator()
+   在 System.Linq.ParallelEnumerable.ToList[TSource](ParallelQuery`1 source)
+   在 TextbookSubscription.Repository.EFRepository`1.GetAll() 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Repository\EFRepository.cs:行号 58
+   在 TextbookSubscription.Application.TermAppl.GetAll() 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\TermAppl.cs:行号 20
+   在 DynamicModule.ns.Wrapped_ITermAppl_b298bcd1e38246e98679e33246877878.<GetAll_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:20:45,244 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:20:45,362 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:21:38,582 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:21:38,582 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:21:42,058 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:21:42,058 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:21:43,466 [8] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:21:43,466 [8] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:01,438 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:01,438 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:03,676 [10] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:03,677 [10] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:04,516 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:04,516 [6] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:04,812 [10] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:04,813 [10] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:04,976 [8] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:04,977 [8] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:05,150 [10] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:05,150 [10] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:05,281 [11] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:05,281 [11] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:11,566 [11] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 TextbookSubscription.Application.SchoolAppl.GetSchoolID(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\SchoolAppl.cs:行号 41
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.<GetSchoolID_DelegateImplementation>__1(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)
+
+2018-08-14 10:22:11,566 [11] ERROR ExceptionLogger - Exception caught
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 DynamicModule.ns.Wrapped_ISchoolAppl_865d9d528a4147bf95433d008fa1a734.GetSchoolID(String schoolName)
+   在 TextbookSubscription.Application.DepartmentAppl.GetDepartmentList(String schoolName) 位置 E:\MyFile\AProgram\2018  软设暑期项目\aaa\TextbookSubscription.Application\DepartmentAppl.cs:行号 31
+   在 DynamicModule.ns.Wrapped_IDepartmentAppl_d04ca553959b4449b7c92b7072f058cc.<GetDepartmentList_DelegateImplementation>__0(IMethodInvocation inputs, GetNextInterceptionBehaviorDelegate getNext)

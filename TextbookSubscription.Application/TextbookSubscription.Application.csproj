@@ -50,9 +50,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepartmentAppl.cs" />
     <Compile Include="DTOAdapter\AutoMapperProfile.cs" />
     <Compile Include="DTOAdapter\AutoMapperTypeAdapter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SchoolAppl.cs" />
     <Compile Include="TermAppl.cs" />
   </ItemGroup>
   <ItemGroup>

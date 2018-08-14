@@ -38,6 +38,13 @@
         IEnumerable<TAggregateRoot> GetAll();
 
         /// <summary>
+        /// 条件查询
+        /// </summary>
+        /// <param name="expression">条件表达式</param>
+        /// <returns></returns>
+        IEnumerable<TAggregateRoot> Find(Expression<Func<TAggregateRoot, bool>> expression);
+
+        /// <summary>
         /// 添加
         /// </summary>
         /// <param name="entity">对象实体</param>

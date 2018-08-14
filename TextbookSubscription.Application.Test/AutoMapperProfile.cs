@@ -15,15 +15,10 @@
             CreateMap<Term, TermView>()
                 .ForMember(tv => tv.TermID, opt => opt.MapFrom(t => t.TermNum))
                 .ForMember(tv => tv.Term, opt => opt.MapFrom(tv => tv.TermName));
-
-            //School => SchoolView
-            CreateMap<School, SchoolView>();
-
-            //SchoolView => School
-            CreateMap<SchoolView, School>();
-
-            //department => DepartmentView
-            CreateMap<Department, DepartmentView>();
+            //School=>SchoolView
+            CreateMap<School, SchoolView>()
+                .ForMember(sv => sv.SchoolID, opt => opt.MapFrom(t => t.SchoolID))
+                .ForMember(sv => sv.SchoolName, opt => opt.MapFrom(sv => sv.SchoolName));
         }
     }
 }
