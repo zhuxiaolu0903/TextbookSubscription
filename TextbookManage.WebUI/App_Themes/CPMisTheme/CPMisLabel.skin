@@ -11,7 +11,7 @@
 
 <asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
 --%>
- <cp:CPMisLabel  runat="server" style="text-align:right;vertical-align:middle" Width="60px" />
+ <cp:CPMisLabel  runat="server" style="text-align:right;vertical-align:middle" Width="100px" />
  <cp:CPMisLabel  runat="server"  style="text-align:right;vertical-align:middle" SkinID="AutoSize"/>
 
 <%--查询条件中用到的皮肤--%>

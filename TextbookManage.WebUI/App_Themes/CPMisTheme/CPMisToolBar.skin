@@ -22,7 +22,7 @@
 </cp:CPMisToolBar>
 <cp:CPMisToolBar  runat="server" SkinID="toolbar" width="407px">   
 </cp:CPMisToolBar>
-<cp:CPMisToolBar  runat="server" SkinID="ToolBarSkin" Width="1300px">   
+<cp:CPMisToolBar  runat="server" SkinID="ToolBarSkin" Width="1366px">   
 </cp:CPMisToolBar>
        
  

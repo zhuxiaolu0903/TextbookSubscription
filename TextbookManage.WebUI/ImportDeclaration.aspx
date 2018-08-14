@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TextbookImport.aspx.cs" Inherits="TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1.TextbookImport" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ImportDeclaration.aspx.cs" Inherits="TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1.ImportDeclaration" %>
 
 <!DOCTYPE html>
 
@@ -41,7 +41,8 @@
                     var a = true;
                     if (command == "Add") {
                         var oWnd = $find("<%=RadWindow1.ClientID%>");
-                        oWnd.setUrl(encodeURI("TextbookAdd.aspx?Id=" + "")); //
+                        //oWnd.setUrl(encodeURI("AddDeclaration.aspx?Id=" + "")); 
+                        oWnd.setUrl(encodeURI("WindowForMessage/AddDeclaration.aspx"));
                         oWnd.show();
                         args.set_cancel(true);
                     }
@@ -55,13 +56,6 @@
                         refreshGrid("Help");
                         args.set_cancel(true);
                     }
-                }
-                //Grid编辑
-                function OnClientUpdateCommand(textbookId) {
-                    var oWnd = $find("<%=RadWindow1.ClientID%>");
-                    oWnd.setUrl(encodeURI("TextbookAdd.aspx?Id=" + textbookId)); //
-                    oWnd.show();
-                    //oWnd.setSize(800, 380);
                 }
                 //异步回调,刷新Grid
                 function refreshGrid(arg) {
@@ -89,6 +83,9 @@
         </telerik:RadAjaxManager>
         <telerik:RadAjaxLoadingPanel ID="RadAjaxLoadingPanel1" runat="server">
         </telerik:RadAjaxLoadingPanel>
+
+
+
 
         <div>
             <%--顶部工具栏--%>
@@ -122,7 +119,7 @@
                     <%--查询--%>
                     <div id="div3" runat="server" style="padding-left: 5px; padding-top: 2px; text-align: left; background-color: #E1EBF7;">
                         <cp:CPMisLabel ID="CPMisLabel4" runat="server" Text="学年学期：" SkinID="AutoSize"></cp:CPMisLabel>&nbsp;&nbsp;
-                        <cp:CPMisComboBox runat="server" ID="cmb_Term" AutoPostBack="True"
+                        <cp:CPMisComboBox runat="server" ID="cmb_STerm" AutoPostBack="True"
                                 DataTextField="Term" DataValueField="TermID" DefaultIndex="0" IsCancelDataBind="False"
                                 IsMaintainSelectedValue="False" SelectedText="" SkinID="btnLogin" >
                         </cp:CPMisComboBox>
@@ -141,20 +138,24 @@
                                 </telerik:GridTemplateColumn>
                                 <%--数据列--%>
                                 <telerik:GridBoundColumn DataField="DeclarationID" UniqueName="DeclarationID" Visible="false"></telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn DataField="TextbookID" UniqueName="TextbookId" Visible="false"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn DataField="SchoolID" UniqueName="SchoolId" Visible="false"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="学院名称" DataField="SchoolName" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="教研室名称" DataField="DepartmentName"  HeaderStyle-Width="80px"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="课程名称" DataField="CourseName" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn HeaderText="班级" DataField="ClassName" ></telerik:GridBoundColumn>
+                                <telerik:GridTemplateColumn HeaderText="班级" >
+                                    <ItemTemplate>
+                                        <cp:CPMisLinkButton ID="LnkShowClass" Text='<% #Eval("ClassName") %>'  CommandName="ShowClass" runat="server"></cp:CPMisLinkButton>
+                                    </ItemTemplate>
+                                </telerik:GridTemplateColumn>
                                 <telerik:GridTemplateColumn HeaderText="书名" HeaderStyle-Width="120px">
                                     <ItemTemplate>
-                                        <cp:CPMisLinkButton ID="LnkShowTextbook" Text='<%#Eval("TextbookName") %>'  CommandName="ShowTextbook" runat="server"></cp:CPMisLinkButton>
+                                        <cp:CPMisLinkButton ID="LnkShowTextbook" Text='<% #Eval("TextbookName") %>'  CommandName="ShowTextbook" runat="server"></cp:CPMisLinkButton>
                                     </ItemTemplate>
                                 </telerik:GridTemplateColumn>
                                 <telerik:GridBoundColumn HeaderText="出版社" DataField="Press" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="价格" DataField="Price"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="电话" DataField="Mobile" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn HeaderText="导入时间" DataField="ImportDate" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="导入时间" DataField="ImportDate" HeaderStyle-Width="120px"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="审核状态" DataField="ApprovalStatus"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="优选状态" DataField="Priority"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="数据标识" DataField="DataSign"></telerik:GridBoundColumn>
@@ -169,13 +170,47 @@
                 <cp:CPMisPageView ID="GdTeacherImport" runat="server">
                     
                     <%--查询部分--%>
-                    <div id="div2" runat="server" style="padding-left: 5px; padding-top: 2px; text-align: left; background-color: #E1EBF7;">
-                        <cp:CPMisLabel ID="CPMisLabel1" runat="server" Text="教材名称：" SkinID="AutoSize"></cp:CPMisLabel>&nbsp;&nbsp;
-                        <cp:CPMisTextBox runat="server" ID="CPMisTextBox1" SkinID="AutoSize"></cp:CPMisTextBox>&nbsp;&nbsp;
-                        <cp:CPMisLabel ID="CPMisLabel2" runat="server" Text="ISBN：" SkinID="AutoSize"></cp:CPMisLabel>&nbsp;&nbsp;
-                        <cp:CPMisTextBox runat="server" ID="CPMisTextBox2" SkinID="AutoSize"></cp:CPMisTextBox>&nbsp;&nbsp;
+                    <div id="div1" runat="server" style="padding-left: 5px; padding-top: 2px; text-align: left; background-color: #E1EBF7;">
+                        <cp:CPMisLabel ID="CPMisLabel1" runat="server" Text="学年学期：" SkinID="AutoSize"></cp:CPMisLabel>&nbsp;&nbsp;
+                        <cp:CPMisComboBox runat="server" ID="cmb_TTerm" AutoPostBack="True"
+                                DataTextField="Term" DataValueField="TermID" DefaultIndex="0" IsCancelDataBind="False"
+                                IsMaintainSelectedValue="False" SelectedText="" SkinID="btnLogin" >
+                        </cp:CPMisComboBox>
                         <cp:CPMisButton runat="server" ID="CPMisButton1" Text="查询" OnClick="BtnQuery_OnClick"></cp:CPMisButton>
                     </div>
+                    <%--教师申报查询结果"--%>
+                    <cp:CPMisGrid ID="GdTeachertDeclare" runat="server" SkinID="AutoPages"
+                        OnBeforeDataBind="GdStudentDeclare_OnBeforeDataBind" OnItemCommand="GdStudentDeclare_OnItemCommand"
+                        OnBeforePageIndexChanged="GdStudentDeclare_OnBeforePageIndexChanged">
+                        <MasterTableView>
+                            <Columns>
+                                <%--序号--%>
+                                <telerik:GridTemplateColumn HeaderText="序号" HeaderStyle-Width="40px">
+                                    <ItemTemplate><%#Container .DataSetIndex +1 %></ItemTemplate>
+                                </telerik:GridTemplateColumn>
+                                <%--数据列--%>
+                                <telerik:GridBoundColumn DataField="DeclarationID" UniqueName="DeclarationID" Visible="false"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn DataField="TextbookID" UniqueName="TextbookId" Visible="false"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="学院名称" DataField="SchoolName" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="教研室名称" DataField="DepartmentName"  HeaderStyle-Width="80px"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="课程名称" DataField="CourseName" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
+                                <telerik:GridTemplateColumn HeaderText="书名" HeaderStyle-Width="120px">
+                                    <ItemTemplate>
+                                        <cp:CPMisLinkButton ID="LnkShowTextbook" Text='<% #Eval("TextbookName") %>'  CommandName="ShowTextbook" runat="server"></cp:CPMisLinkButton>
+                                    </ItemTemplate>
+                                </telerik:GridTemplateColumn>
+                                <telerik:GridBoundColumn HeaderText="出版社" DataField="Press" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="价格" DataField="Price"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="电话" DataField="Mobile" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="导入时间" DataField="ImportDate" HeaderStyle-Width="120px"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="审核状态" DataField="ApprovalStatus"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="优选状态" DataField="Priority"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="数据标识" DataField="DataSign"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="需要教材" DataField="NeedTextbook"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn HeaderText="备注" DataField="Remarks"></telerik:GridBoundColumn>
+                            </Columns>
+                        </MasterTableView>
+                    </cp:CPMisGrid>
 
                 </cp:CPMisPageView>
             </cp:CPMisMultiPage>
@@ -183,9 +218,9 @@
             <%--弹窗管理器--%>
             <telerik:RadWindowManager ID="RadWindowManager1" runat="server">
                 <Windows>
-                    <telerik:RadWindow ID="RadWindow1" runat="server" Top="100" Left="100" Width="800" Height="380">
+                    <telerik:RadWindow ID="RadWindow1" runat="server" Top="150" Left="400" Width="800" Height="380">
                     </telerik:RadWindow>
-                    <telerik:RadWindow ID="RadWindow2" runat="server" Top="100" Left="200" Width="400" Height="180">
+                    <telerik:RadWindow ID="RadWindow2" runat="server" Top="150" Left="400" Width="400" Height="180">
                     </telerik:RadWindow>
                 </Windows>
             </telerik:RadWindowManager>
