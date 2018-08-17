@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace TextbookManage.WebUI.WindowForMessage {
+namespace TextbookManage.WebUI.MessageWindows {
     
     
     public partial class QueryTextbookName {

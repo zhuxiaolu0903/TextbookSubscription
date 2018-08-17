@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="QueryTextbookNameByIsbn.aspx.cs" Inherits="TextbookManage.WebUI.WindowForMessage.QueryTextbookName" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="QueryTextbookNameByIsbn.aspx.cs" Inherits="TextbookManage.WebUI.MessageWindows.QueryTextbookName" %>
 
 <!DOCTYPE html>
 

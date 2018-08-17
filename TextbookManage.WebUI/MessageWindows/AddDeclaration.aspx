@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddDeclaration.aspx.cs" Inherits="TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1.TextbookAdd" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AddDeclaration.aspx.cs" Inherits="TextbookManage.WebUI.MessageWindows.TextbookAdd" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">

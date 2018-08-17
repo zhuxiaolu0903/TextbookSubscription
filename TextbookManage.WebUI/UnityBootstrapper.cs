@@ -34,10 +34,22 @@ namespace TextbookManage.WebUI
             container.RegisterType<IRepositoryDbContext, EFRepositoryDbContext>(new PerResolveLifetimeManager());
             //Repository
             container
-                .RegisterType<ITermRepository, TermRepository>();
+                .RegisterType<ITermRepository, TermRepository>()
+                .RegisterType<ISchoolRepository, SchoolRepository>()
+                .RegisterType<IDepartmentRepository, DepartmentRepository>();
             //Application
             container
                 .RegisterType<ITermAppl, TermAppl>(
+                new Interceptor<InterfaceInterceptor>(),
+                new InterceptionBehavior<CacheBehavior>(),
+                new InterceptionBehavior<ExceptionLoggerBehavior>()
+                )
+                .RegisterType<ISchoolAppl, SchoolAppl>(
+                new Interceptor<InterfaceInterceptor>(),
+                new InterceptionBehavior<CacheBehavior>(),
+                new InterceptionBehavior<ExceptionLoggerBehavior>()
+                )
+                .RegisterType<IDepartmentAppl, DepartmentAppl>(
                 new Interceptor<InterfaceInterceptor>(),
                 new InterceptionBehavior<CacheBehavior>(),
                 new InterceptionBehavior<ExceptionLoggerBehavior>()

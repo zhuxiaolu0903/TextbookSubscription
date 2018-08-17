@@ -17,6 +17,7 @@
         }
         public IEnumerable<TermView> GetAll()
         {
+            
             var termList = _rep.GetAll();
             return _adpater.Adapt<TermView>(termList);
         }

@@ -8,7 +8,7 @@ using TextbookSubscription.Infrastructure.ServiceLocators;
 using System.Web.UI.WebControls;
 using System.Data;
 
-namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
+namespace TextbookManage.WebUI
 {
     public partial class ImportDeclaration : System.Web.UI.Page
     {

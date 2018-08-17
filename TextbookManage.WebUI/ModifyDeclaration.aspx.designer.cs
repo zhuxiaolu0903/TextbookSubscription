@@ -10,7 +10,7 @@
 namespace TextbookManage.WebUI {
     
     
-    public partial class ImportDeclaration {
+    public partial class ModifyDeclaration {
         
         /// <summary>
         /// form1 控件。
@@ -148,13 +148,31 @@ namespace TextbookManage.WebUI {
         protected global::CPMis.Web.WebControls.CPMisLabel CPMisLabel4;
         
         /// <summary>
-        /// cmb_STerm 控件。
+        /// cmb_School 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisComboBox cmb_STerm;
+        protected global::CPMis.Web.WebControls.CPMisComboBox cmb_School;
+        
+        /// <summary>
+        /// CPMisLabel3 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::CPMis.Web.WebControls.CPMisLabel CPMisLabel3;
+        
+        /// <summary>
+        /// cmb_Department 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::CPMis.Web.WebControls.CPMisComboBox cmb_Department;
         
         /// <summary>
         /// cbtnQuery 控件。
@@ -166,13 +184,13 @@ namespace TextbookManage.WebUI {
         protected global::CPMis.Web.WebControls.CPMisButton cbtnQuery;
         
         /// <summary>
-        /// GdStudentDeclare 控件。
+        /// GdStudentModifyDeclare 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisGrid GdStudentDeclare;
+        protected global::CPMis.Web.WebControls.CPMisGrid GdStudentModifyDeclare;
         
         /// <summary>
         /// GdTeacherImport 控件。
@@ -184,13 +202,13 @@ namespace TextbookManage.WebUI {
         protected global::CPMis.Web.WebControls.CPMisPageView GdTeacherImport;
         
         /// <summary>
-        /// div1 控件。
+        /// div2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl div2;
         
         /// <summary>
         /// CPMisLabel1 控件。
@@ -202,13 +220,31 @@ namespace TextbookManage.WebUI {
         protected global::CPMis.Web.WebControls.CPMisLabel CPMisLabel1;
         
         /// <summary>
-        /// cmb_TTerm 控件。
+        /// CPMisTextBox1 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisComboBox cmb_TTerm;
+        protected global::CPMis.Web.WebControls.CPMisTextBox CPMisTextBox1;
+        
+        /// <summary>
+        /// CPMisLabel2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::CPMis.Web.WebControls.CPMisLabel CPMisLabel2;
+        
+        /// <summary>
+        /// CPMisTextBox2 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::CPMis.Web.WebControls.CPMisTextBox CPMisTextBox2;
         
         /// <summary>
         /// CPMisButton1 控件。
@@ -218,15 +254,6 @@ namespace TextbookManage.WebUI {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::CPMis.Web.WebControls.CPMisButton CPMisButton1;
-        
-        /// <summary>
-        /// GdTeacherDeclare 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisGrid GdTeacherDeclare;
         
         /// <summary>
         /// RadWindowManager1 控件。
@@ -247,12 +274,12 @@ namespace TextbookManage.WebUI {
         protected global::Telerik.Web.UI.RadWindow RadWindow1;
         
         /// <summary>
-        /// ImportRadWindow 控件。
+        /// RadWindow2 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Telerik.Web.UI.RadWindow ImportRadWindow;
+        protected global::Telerik.Web.UI.RadWindow RadWindow2;
     }
 }

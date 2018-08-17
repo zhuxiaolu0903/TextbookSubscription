@@ -55,7 +55,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DepartmentRepositoryTests.cs" />
     <Compile Include="ProfessionalClassRepositoryTests.cs" />
+    <Compile Include="SchoolRepositoryTests.cs" />
     <Compile Include="TermRepositoryTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +69,10 @@
     <ProjectReference Include="..\TextbookSubscription.Domain\TextbookSubscription.Domain.csproj">
       <Project>{c3468b9d-0b6a-4a03-a60e-c9be1589bcdd}</Project>
       <Name>TextbookSubscription.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TextbookSubscription.IApplication\TextbookSubscription.IApplication.csproj">
+      <Project>{e00e2716-3ba3-4e22-bc32-50edcedd88a9}</Project>
+      <Name>TextbookSubscription.IApplication</Name>
     </ProjectReference>
     <ProjectReference Include="..\TextbookSubscription.Infrastructure\TextbookSubscription.Infrastructure.csproj">
       <Project>{E901854E-A721-4E21-98E9-AF2C963CF07B}</Project>

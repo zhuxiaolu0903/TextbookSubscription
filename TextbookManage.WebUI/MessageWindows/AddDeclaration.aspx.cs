@@ -7,7 +7,7 @@ using System.Web;
 
 
 
-namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
+namespace TextbookManage.WebUI.MessageWindows
 {
     public partial class TextbookAdd : CPMis.Web.WebControls.Page
     {
