@@ -6,7 +6,7 @@ using TextbookSubscription.ViewModels;
 using TextbookSubscription.IApplication;
 using TextbookSubscription.Infrastructure.ServiceLocators;
 
-namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
+namespace TextbookManage.WebUI
 {
     public partial class ImportDeclaration : System.Web.UI.Page
     {

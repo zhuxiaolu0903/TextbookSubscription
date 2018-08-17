@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1 {
+namespace TextbookManage.WebUI {
     
     
     public partial class Import {
@@ -67,39 +67,21 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1 {
         protected global::Telerik.Web.UI.RadFormDecorator RadFormDecorator1;
         
         /// <summary>
-        /// FileUpload1 控件。
+        /// rAsyncFileUpload 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::Telerik.Web.UI.RadAsyncUpload rAsyncFileUpload;
         
         /// <summary>
-        /// CPMisButton1 控件。
+        /// cUploadBtn 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisButton CPMisButton1;
-        
-        /// <summary>
-        /// LabMessage1 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisLabel LabMessage1;
-        
-        /// <summary>
-        /// LabMessage2 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisLabel LabMessage2;
+        protected global::CPMis.Web.WebControls.CPMisButton cUploadBtn;
     }
 }

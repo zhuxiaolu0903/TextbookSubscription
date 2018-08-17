@@ -10,9 +10,9 @@ using TextbookSubscription.IApplication;
 using TextbookSubscription.Infrastructure.ServiceLocators;
 using TextbookSubscription.ViewModels;
 
-namespace TextbookManage.WebUI.Maintain_1
+namespace TextbookManage.WebUI
 {
-    public partial class RetifyDeclaration : System.Web.UI.Page
+    public partial class ModifyDeclaration : System.Web.UI.Page
     {
         private ISchoolAppl _schoolList = ServiceLocator.Current.GetInstance<ISchoolAppl>();
         private IDepartmentAppl _departmentList = ServiceLocator.Current.GetInstance<IDepartmentAppl>();

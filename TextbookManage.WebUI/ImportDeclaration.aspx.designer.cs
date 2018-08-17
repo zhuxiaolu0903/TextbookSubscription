@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1 {
+namespace TextbookManage.WebUI {
     
     
     public partial class ImportDeclaration {

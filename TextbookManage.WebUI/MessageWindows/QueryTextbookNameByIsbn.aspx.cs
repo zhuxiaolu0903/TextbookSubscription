@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TextbookSubscription.ViewModels;
 
-namespace TextbookManage.WebUI.WindowForMessage
+namespace TextbookManage.WebUI.MessageWindows
 {
     public partial class QueryTextbookName : System.Web.UI.Page
     {

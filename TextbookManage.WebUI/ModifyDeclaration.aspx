@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModifyDeclaration.aspx.cs" Inherits="TextbookManage.WebUI.Maintain_1.RetifyDeclaration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ModifyDeclaration.aspx.cs" Inherits="TextbookManage.WebUI.ModifyDeclaration" %>
 
 <!DOCTYPE html>
 

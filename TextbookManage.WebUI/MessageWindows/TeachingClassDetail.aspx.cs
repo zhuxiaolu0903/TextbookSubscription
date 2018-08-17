@@ -3,7 +3,7 @@ using TextbookSubscription.Infrastructure;
 using TextbookSubscription.IApplication;
 
 
-namespace TextbookManage.WebUI.WindowForMessage
+namespace TextbookManage.WebUI.MessageWindows
 {
     public partial class TeachingClassDetail : CPMis.Web.WebControls.Page
     {

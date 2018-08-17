@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TeachingClassDetail.aspx.cs" Inherits="TextbookManage.WebUI.WindowForMessage.TeachingClassDetail" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="TeachingClassDetail.aspx.cs" Inherits="TextbookManage.WebUI.MessageWindows.TeachingClassDetail" %>
 <%@ OutputCache Duration="60" VaryByParam="TeachingClassNum" %>
 
 <!DOCTYPE html>

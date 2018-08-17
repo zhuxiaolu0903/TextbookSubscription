@@ -1,7 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TextbookSubscription.Repository;
 using TextbookSubscription.Domain;
 using System.Linq;
@@ -12,7 +9,7 @@ namespace TextbookSubscription.RepositoryTests
     /// SchoolRepositoryTest 的摘要说明
     /// </summary>
     [TestClass]
-    public class SchoolRepositoryTest
+    public class SchoolRepositoryTests
     {
         public TestContext TestContext { get; set; }
 

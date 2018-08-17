@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Import.aspx.cs" Inherits="TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1.Import" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Import.aspx.cs" Inherits="TextbookManage.WebUI.Import" %>
 
 <!DOCTYPE html>
 
@@ -12,12 +12,6 @@
         width:350px;
         height:100px;
         margin:20px 0 40px 40px;
-    }
-    .box{
-        width:300px;
-        height:60px;
-        margin:20px 0 40px 0;
-        border:4px ridge #d6e4f4;
     }
 
     </style>
@@ -37,17 +31,14 @@
         <div>
             <br />
             <div class="upload">
-                <asp:FileUpload ID="FileUpload1" style="background-color:transparent"  runat="server" />
-                <cp:CPMisButton ID="CPMisButton1" runat="server" Text="上传" OnClick="BtnUpload_Click"  SkinID="Auto"/>
-                <div class="box">
-                    <cp:CPMisLabel ID="LabMessage1" runat="server" ForeColor="red" SkinID="AutoSize" /><br />
-                    <cp:CPMisLabel ID="LabMessage2" runat="server" SkinID="AutoSize" />
-                </div>
-                
+                <telerik:RadAsyncUpload ID="rAsyncFileUpload" runat="server"
+                    RenderMode="Lightweight" HideFileInput="true" 
+                    AllowedFileExtensions=".xls,.xlsx" MaxFileInputsCount="1"
+                    />
+
+                <cp:CPMisButton ID="cUploadBtn" runat="server" Text="上传" 
+                    OnClick="OnUploadBtnClicked"  SkinID="Auto"/>
             </div>
-               
-
-
         </div>
     </form>
 </body>

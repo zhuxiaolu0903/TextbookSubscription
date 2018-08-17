@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ImportDeclaration.aspx.cs" Inherits="TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1.ImportDeclaration" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ImportDeclaration.aspx.cs" Inherits="TextbookManage.WebUI.ImportDeclaration" %>
 
 <!DOCTYPE html>
 

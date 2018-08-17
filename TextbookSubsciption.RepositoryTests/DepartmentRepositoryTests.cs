@@ -10,7 +10,7 @@ using TextbookSubscription.Repository;
 namespace TextbookSubscription.RepositoryTests
 {
     [TestClass]
-    public class DepartmentRepositoryTest
+    public class DepartmentRepositoryTests
     {
         public TestContext TestContext { set; get; }
 

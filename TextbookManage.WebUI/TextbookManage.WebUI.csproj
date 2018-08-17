@@ -282,10 +282,13 @@
     <Content Include="App_Themes\CPMisTheme\DatePicker.skin" />
     <Content Include="App_Themes\CPMisTheme\OnFileUpdate.skin" />
     <Content Include="App_Themes\CPMisTheme\ReportViewer.skin" />
+    <Content Include="ImportDeclaration.aspx" />
     <Content Include="Modify.aspx" />
     <Content Include="ModifyDeclaration.aspx" />
     <Content Include="TeachingClassDetail.aspx" />
-    <Content Include="TextbookImport.aspx" />
+    <Content Include="MessageWindows\AddDeclaration.aspx" />
+    <Content Include="MessageWindows\QueryTextbookNameByIsbn.aspx" />
+    <Content Include="MessageWindows\TeachingClassDetail.aspx" />
     <None Include="packages.config" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.7.2.js" />
@@ -431,6 +434,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Upload\申报计划.xlsx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Import.aspx.cs">
@@ -439,6 +443,13 @@
     </Compile>
     <Compile Include="Import.aspx.designer.cs">
       <DependentUpon>Import.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ImportDeclaration.aspx.cs">
+      <DependentUpon>ImportDeclaration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ImportDeclaration.aspx.designer.cs">
+      <DependentUpon>ImportDeclaration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Modify.aspx.cs">
       <DependentUpon>Modify.aspx</DependentUpon>
@@ -462,14 +473,28 @@
     <Compile Include="TeachingClassDetail.aspx.designer.cs">
       <DependentUpon>TeachingClassDetail.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TextbookImport.aspx.cs">
-      <DependentUpon>TextbookImport.aspx</DependentUpon>
+    <Compile Include="UnityBootstrapper.cs" />
+    <Compile Include="MessageWindows\AddDeclaration.aspx.cs">
+      <DependentUpon>AddDeclaration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TextbookImport.aspx.designer.cs">
-      <DependentUpon>TextbookImport.aspx</DependentUpon>
+    <Compile Include="MessageWindows\AddDeclaration.aspx.designer.cs">
+      <DependentUpon>AddDeclaration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UnityBootstrapper.cs" />
+    <Compile Include="MessageWindows\QueryTextbookNameByIsbn.aspx.cs">
+      <DependentUpon>QueryTextbookNameByIsbn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MessageWindows\QueryTextbookNameByIsbn.aspx.designer.cs">
+      <DependentUpon>QueryTextbookNameByIsbn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MessageWindows\TeachingClassDetail.aspx.cs">
+      <DependentUpon>TeachingClassDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MessageWindows\TeachingClassDetail.aspx.designer.cs">
+      <DependentUpon>TeachingClassDetail.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="AppSettings.config">
@@ -505,6 +530,7 @@
       <Name>TextbookSubscription.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

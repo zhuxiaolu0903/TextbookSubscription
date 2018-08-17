@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace TextbookManage.WebUI.Maintain_1 {
+namespace TextbookManage.WebUI {
     
     
-    public partial class RetifyDeclaration {
+    public partial class ModifyDeclaration {
         
         /// <summary>
         /// form1 控件。
