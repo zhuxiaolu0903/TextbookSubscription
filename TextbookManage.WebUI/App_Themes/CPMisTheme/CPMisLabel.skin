@@ -21,4 +21,4 @@
       Xing:用于表单中*标记必操作项
       Paraset:用于表单中说明性质的Label
 --%>
-<cp:CPMisLabel  runat="server"  style="text-align:right;vertical-align:middle" ForeColor="red" SkinID="Xing"/>  <cp:CPMisLabel  runat="server"  style="text-align:left;vertical-align:middle; margin-left:3px" ForeColor="Gray" SkinID="Paraset"/> 
+<cp:CPMisLabel  runat="server"  style="text-align:right;vertical-align:middle" ForeColor="red" SkinID="Xing"/>  <cp:CPMisLabel  runat="server"  style="text-align:right;vertical-align:middle;font-size:14px;" ForeColor="red" SkinID="Message"/>  <cp:CPMisLabel  runat="server"  style="text-align:left;vertical-align:middle; margin-left:3px" ForeColor="Gray" SkinID="Paraset"/> 

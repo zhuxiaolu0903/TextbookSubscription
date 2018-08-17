@@ -16,8 +16,7 @@
   <cp:CPMisButton  Width="60px" runat="server"   style="height:22px;color:Black; vertical-align:middle;"  SkinID="bt60"></cp:CPMisButton>
   <cp:CPMisButton   runat="server"  style="height:22px;color:Black; vertical-align:middle;"  SkinID="Auto"></cp:CPMisButton>
   <cp:CPMisButton   runat="server" BackColor="Transparent" style="color:Black; text-align:left; vertical-align:middle;" SkinID="AutoHeight"></cp:CPMisButton>
-
-
+ <cp:CPMisButton   runat="server" SkinID="MetroTouch"></cp:CPMisButton>
     <%--登录按钮--%>
       <asp:ImageButton runat="server" ImageUrl="~/Img/btn_Login.png" Height="49px" style="margin-left:7px" SkinID="btnLogin"/>
       <asp:Login runat="server" BorderWidth="0" style="border:0;" SkinID="noBorder"></asp:Login>

@@ -5,6 +5,8 @@ using Telerik.Web.UI;
 using TextbookSubscription.ViewModels;
 using TextbookSubscription.IApplication;
 using TextbookSubscription.Infrastructure.ServiceLocators;
+using System.Web.UI.WebControls;
+using System.Data;
 
 namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
 {
@@ -26,6 +28,8 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
                 //学年学期视图
                 ComBoxTerm_Student();
                 ComBoxTerm_Teacher();
+                GdTeacherDeclare.DoDataBind();
+
             }
         }
 
@@ -188,6 +192,63 @@ namespace TextbookManage.WebUI.Tb_Maintain.Tb_Maintain_1
             var control = sender as CPMisCheckBox;
             var isChecked = control.Checked;
             GdStudentDeclare.SetAllCheckControlState(isChecked);
+        }
+
+
+        protected void GdTeacherDeclare_OnBeforeDataBind(object sender, EventArgs e)
+        {
+            IList<ImportStudentDeclarationView> list = new List<ImportStudentDeclarationView>();
+            GdTeacherDeclare.DataSource = list;
+            DataTable dt = new DataTable();
+
+
+
+            dt.Columns.Add("DeclarationID");
+
+            dt.Columns.Add("TextbookId");
+
+            dt.Columns.Add("SchoolName");
+
+            dt.Columns.Add("DepartmentName");
+
+            dt.Columns.Add("CourseName");
+
+            dt.Columns.Add("TextbookName");
+
+            dt.Columns.Add("Press");
+
+            dt.Columns.Add("Price");
+
+            dt.Columns.Add("Mobile");
+
+            dt.Columns.Add("ImportDate");
+
+            dt.Columns.Add("ApprovalStatus");
+
+            dt.Columns.Add("Priority");
+
+            dt.Columns.Add("DataSign");
+
+            dt.Columns.Add("NeedTextbook");
+
+            dt.Columns.Add("Remarks");
+
+
+
+            if (dt.Rows.Count == 0)
+
+            {
+
+                dt.Rows.Add(dt.NewRow());
+
+            }
+
+
+
+            GdTeacherDeclare.DataSource = dt;
+
+            GdTeacherDeclare.DataBind();
+            int columnCount = dt.Columns.Count;
         }
 
     }

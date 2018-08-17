@@ -47,7 +47,7 @@
                         args.set_cancel(true);
                     }
                     else if (command == "Import") {
-                        var oWnd = $find("<%=RadWindow2.ClientID%>");
+                        var oWnd = $find("<%=ImportRadWindow.ClientID%>");
                         oWnd.setUrl(encodeURI("Import.aspx"));
                         oWnd.show();
                         args.set_cancel(true);
@@ -166,6 +166,10 @@
                     </cp:CPMisGrid>
                  </cp:CPMisPageView>
 
+
+
+
+
              <%--  <%--教师申报查询结果 --%>
                 <cp:CPMisPageView ID="GdTeacherImport" runat="server">
                     
@@ -179,8 +183,8 @@
                         <cp:CPMisButton runat="server" ID="CPMisButton1" Text="查询" OnClick="BtnQuery_OnClick"></cp:CPMisButton>
                     </div>
                     <%--教师申报查询结果"--%>
-                    <cp:CPMisGrid ID="GdTeachertDeclare" runat="server" SkinID="AutoPages"
-                        OnBeforeDataBind="GdStudentDeclare_OnBeforeDataBind" OnItemCommand="GdStudentDeclare_OnItemCommand"
+                    <cp:CPMisGrid ID="GdTeacherDeclare" runat="server" SkinID="AutoPages"  GridLines="None" AllowSorting="True" AllowPaging="True" 
+                        OnBeforeDataBind="GdTeacherDeclare_OnBeforeDataBind" OnItemCommand="GdStudentDeclare_OnItemCommand"
                         OnBeforePageIndexChanged="GdStudentDeclare_OnBeforePageIndexChanged">
                         <MasterTableView>
                             <Columns>
@@ -220,7 +224,7 @@
                 <Windows>
                     <telerik:RadWindow ID="RadWindow1" runat="server" Top="150" Left="400" Width="800" Height="380">
                     </telerik:RadWindow>
-                    <telerik:RadWindow ID="RadWindow2" runat="server" Top="150" Left="400" Width="400" Height="180">
+                    <telerik:RadWindow ID="ImportRadWindow" runat="server" Top="150" Left="400" Width="300" Height="180">
                     </telerik:RadWindow>
                 </Windows>
             </telerik:RadWindowManager>
