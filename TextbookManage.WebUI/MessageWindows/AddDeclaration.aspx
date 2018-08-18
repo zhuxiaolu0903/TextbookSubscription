@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>教材</title>
+    <title>新建学生申报</title>
 </head>
 <body>
     <form id="form1" runat="server">

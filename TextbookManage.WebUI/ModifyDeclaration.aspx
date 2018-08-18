@@ -7,22 +7,25 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>修改申报</title>
     <style type="text/css">
-        .table,.cell11,.cell12,.cell13{
-            border:0px;
-            margin:0px;
-            padding:0px;
+        .table, .cell11, .cell12, .cell13 {
+            border: 0px;
+            margin: 0px;
+            padding: 0px;
         }
-        .cell11{
-            text-align:right;
-            width:62px;
+
+        .cell11 {
+            text-align: right;
+            width: 62px;
         }
-        .cell12{
-            text-align:center;
-            width:182px;
+
+        .cell12 {
+            text-align: center;
+            width: 182px;
         }
-        .cell13{
-            text-align:center;
-            width:80px;
+
+        .cell13 {
+            text-align: center;
+            width: 80px;
         }
     </style>
 </head>
@@ -95,7 +98,6 @@
                 <telerik:AjaxSetting AjaxControlID="RadAjaxManager1">
                     <UpdatedControls>
                         <telerik:AjaxUpdatedControl ControlID="GdStudentModifyDeclare" />
-
                     </UpdatedControls>
                 </telerik:AjaxSetting>
                 <telerik:AjaxSetting AjaxControlID="cmb_School">
@@ -179,11 +181,30 @@
                                 <telerik:GridTemplateColumn HeaderText="序号" HeaderStyle-Width="40px">
                                     <ItemTemplate><%#Container .DataSetIndex +1 %></ItemTemplate>
                                 </telerik:GridTemplateColumn>
+                                <%--复选框--%>
+                                <telerik:GridTemplateColumn UniqueName="CheckFlag" DataField="CheckFlag">
+                                    <%--顶部的CheckBox--%>
+                                    <%--
+                                            OnCheckedChanged：当CheckBox的状态发生改变的时候触发的事件，即点击以及取消CheckBox时触发的事件
+                                    --%>
+                                    <HeaderTemplate>
+                                        <cp:CPMisCheckBox ID="ChkAll" AutoPostBack="true" runat="server" OnCheckedChanged="ChkAll_OnCheckedChanged" />
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <cp:CPMisCheckBox ID="ChkRow" runat="server" Checked='<% #Eval("CheckFlag") %>' />
+                                    </ItemTemplate>
+                                    <HeaderStyle Width="30px"></HeaderStyle>
+                                </telerik:GridTemplateColumn>
+                                <%--编辑按钮--%>
+                                <telerik:GridTemplateColumn HeaderText="编辑">
+                                    <ItemTemplate>
+                                        <img alt="编辑教材" src="../../Img/GridEdit.png" onclick="OnClientUpdateCommand('<%# Eval("TextbookId") %>')" />
+                                    </ItemTemplate>
+                                    <HeaderStyle Width="40px"></HeaderStyle>
+                                </telerik:GridTemplateColumn>
                                 <%--数据列--%>
                                 <telerik:GridBoundColumn DataField="DeclarationID" UniqueName="DeclarationID" Visible="false"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn DataField="TextbookID" UniqueName="TextbookId" Visible="false"></telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn HeaderText="学院名称" DataField="SchoolName" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn HeaderText="教研室名称" DataField="DepartmentName" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="课程名称" DataField="CourseName" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="班级" DataField="ClassName"></telerik:GridBoundColumn>
                                 <telerik:GridTemplateColumn HeaderText="书名" HeaderStyle-Width="120px">

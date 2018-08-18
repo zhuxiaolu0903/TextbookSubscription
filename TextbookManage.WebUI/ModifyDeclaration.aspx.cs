@@ -17,15 +17,12 @@ namespace TextbookManage.WebUI
         private ISchoolAppl _schoolList = ServiceLocator.Current.GetInstance<ISchoolAppl>();
         private IDepartmentAppl _departmentList = ServiceLocator.Current.GetInstance<IDepartmentAppl>();
 
-        //var schoolList;
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 GdStudentModifyDeclare.DoDataBind();
-                ComBoxSchool(); //学年学期 下拉框
-               // ComBoxDepartment();
+                ComBoxSchool();
             }
         }
         /// <summary>
@@ -37,12 +34,10 @@ namespace TextbookManage.WebUI
             cmb_School.DataSource = list;
             cmb_School.DataBind();
 
-            //var schoolName = cmb_School.Text;
             var departmentList = _departmentList.GetDepartmentList(list.First().SchoolName);
             cmb_Department.DataSource = departmentList;
             cmb_Department.DataBind();
 
-            // CPMis.Web.WebClient.ScriptManager.Alert("comboxshool");
         }
         /// <summary>
         /// 教研室

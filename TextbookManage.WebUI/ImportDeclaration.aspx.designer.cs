@@ -103,13 +103,13 @@ namespace TextbookManage.WebUI {
         protected global::CPMis.Web.WebControls.CPMisToolBar ToolBar1;
         
         /// <summary>
-        /// TabStrip1 控件。
+        /// TabStrip 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::CPMis.Web.WebControls.CPMisTabStrip TabStrip1;
+        protected global::CPMis.Web.WebControls.CPMisTabStrip TabStrip;
         
         /// <summary>
         /// MpTextbookManage 控件。
