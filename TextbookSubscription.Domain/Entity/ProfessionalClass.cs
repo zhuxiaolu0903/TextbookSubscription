@@ -5,7 +5,7 @@
     public class ProfessionalClass : AggregateRoot
     {
         /// <summary>
-        /// 班级ID,GUID值
+        /// 班级ID
         /// </summary>
         public string ClassID { get; set; }
 

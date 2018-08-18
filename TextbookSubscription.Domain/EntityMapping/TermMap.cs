@@ -22,7 +22,6 @@
             Property(t => t.TermName).HasColumnName("Term");
 
             //Ingore property
-            //Term table have no Guid
             Ignore(t => t.ID);
         }
     }

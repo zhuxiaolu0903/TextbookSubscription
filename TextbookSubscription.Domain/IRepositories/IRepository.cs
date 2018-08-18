@@ -3,7 +3,6 @@
     using System;
     using System.Collections.Generic;
     using System.Linq.Expressions;
-    using EFDbContext;
 
     /// <summary>
     /// 规定所有接口仓库的基础方法

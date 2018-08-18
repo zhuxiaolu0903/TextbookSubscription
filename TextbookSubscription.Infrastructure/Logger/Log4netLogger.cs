@@ -8,7 +8,7 @@
     public class Log4netLogger : ILogger
     {
 
-        #region Private Fields
+        #region 私有变量
 
         private readonly log4net.ILog log;
 

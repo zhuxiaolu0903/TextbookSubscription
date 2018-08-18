@@ -123,7 +123,7 @@
                                 DataTextField="Term" DataValueField="TermID" DefaultIndex="0" IsCancelDataBind="False"
                                 IsMaintainSelectedValue="False" SelectedText="" SkinID="btnLogin" >
                         </cp:CPMisComboBox>
-                        
+                       
                         <cp:CPMisButton runat="server" ID="cbtnQuery" Text="查询" OnClick="BtnQuery_OnClick"></cp:CPMisButton>
                     </div>
                     <%--学生申报查询结果"--%>
@@ -138,7 +138,7 @@
                                 </telerik:GridTemplateColumn>
                                 <%--数据列--%>
                                 <telerik:GridBoundColumn DataField="DeclarationID" UniqueName="DeclarationID" Visible="false"></telerik:GridBoundColumn>
-                                <telerik:GridBoundColumn DataField="SchoolID" UniqueName="SchoolId" Visible="false"></telerik:GridBoundColumn>
+                                <telerik:GridBoundColumn DataField="TextbookID" UniqueName="TextbookID" Visible="false"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="学院名称" DataField="SchoolName" HeaderStyle-Width="80px"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="教研室名称" DataField="DepartmentName"  HeaderStyle-Width="80px"></telerik:GridBoundColumn>
                                 <telerik:GridBoundColumn HeaderText="课程名称" DataField="CourseName" HeaderStyle-Width="80px"></telerik:GridBoundColumn>

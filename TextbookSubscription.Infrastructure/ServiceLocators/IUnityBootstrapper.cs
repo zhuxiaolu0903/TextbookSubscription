@@ -1,7 +1,7 @@
-﻿using Microsoft.Practices.Unity;
-
-namespace TextbookSubscription.Infrastructure.ServiceLocators
+﻿namespace TextbookSubscription.Infrastructure.ServiceLocators
 {
+    using Microsoft.Practices.Unity;
+
     /// <summary>
     /// Unity容器初始化器
     /// </summary>

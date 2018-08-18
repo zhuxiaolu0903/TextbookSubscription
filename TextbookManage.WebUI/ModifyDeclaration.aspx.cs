@@ -14,18 +14,15 @@ namespace TextbookManage.WebUI
 {
     public partial class ModifyDeclaration : System.Web.UI.Page
     {
-        private ISchoolAppl _schoolList = ServiceLocator.Current.GetInstance<ISchoolAppl>();
-        private IDepartmentAppl _departmentList = ServiceLocator.Current.GetInstance<IDepartmentAppl>();
-
-        //var schoolList;
+        private ISchoolAppl _schoolRep = ServiceLocator.Current.GetInstance<ISchoolAppl>();
+        private IDepartmentAppl _departmentRep = ServiceLocator.Current.GetInstance<IDepartmentAppl>();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 GdStudentModifyDeclare.DoDataBind();
-                ComBoxSchool(); //学年学期 下拉框
-               // ComBoxDepartment();
+                ComBoxSchool();
             }
         }
         /// <summary>
@@ -33,16 +30,14 @@ namespace TextbookManage.WebUI
         /// </summary>
         private void ComBoxSchool()
         {
-            var list = _schoolList.GetAll();
+            var list = _schoolRep.GetAll();
             cmb_School.DataSource = list;
             cmb_School.DataBind();
 
-            //var schoolName = cmb_School.Text;
-            var departmentList = _departmentList.GetDepartmentList(list.First().SchoolName);
+            var departmentList = _departmentRep.GetDepartmentList(list.First().SchoolName);
             cmb_Department.DataSource = departmentList;
             cmb_Department.DataBind();
 
-            // CPMis.Web.WebClient.ScriptManager.Alert("comboxshool");
         }
         /// <summary>
         /// 教研室
@@ -50,7 +45,7 @@ namespace TextbookManage.WebUI
         private void ComBoxDepartment()
         {
             var schoolName = cmb_School.Text;
-            var list = _departmentList.GetDepartmentList(schoolName);
+            var list = _departmentRep.GetDepartmentList(schoolName);
             cmb_Department.DataSource = list;
             cmb_Department.DataBind();
         }
@@ -66,13 +61,10 @@ namespace TextbookManage.WebUI
             switch (argument)
             {
                 case "Add":
-
                     break;
                 case "Modify":
-
                     break;
                 case "Help":
-
                     break;
                 default:
                     GdStudentModifyDeclare.DoDataBind();

@@ -160,11 +160,11 @@ namespace TextbookManage.WebUI
             var isNotEmpty = !string.Equals(id, Guid.Empty.ToString());
             if (key.Equals("ShowTextbook") && isNotNull && isNotEmpty)//显示教材详情
             {
-                OpenNewWindow("WindowForMessage/TextbookDetailMessage.aspx", id);
+                OpenNewWindow("MessageWindows/TextbookDetailMessage.aspx", id);
             }
             if (key.Equals("ShowClass"))
             {
-                CPMis.Web.WebClient.ScriptManager.OpenRadWindow("WindowForMessage/TeachingClassDetail.aspx", "RadWindow2");
+                CPMis.Web.WebClient.ScriptManager.OpenRadWindow("MessageWindows/TeachingClassDetail.aspx", "RadWindow2");
             }
         }
 

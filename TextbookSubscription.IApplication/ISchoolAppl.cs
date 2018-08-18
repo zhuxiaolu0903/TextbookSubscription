@@ -1,5 +1,4 @@
-﻿
-namespace TextbookSubscription.IApplication
+﻿namespace TextbookSubscription.IApplication
 {
     using ViewModels;
     using System.Collections.Generic;
@@ -10,16 +9,8 @@ namespace TextbookSubscription.IApplication
         /// <summary>
         /// 获取全部学院
         /// </summary>
-        /// <returns></returns>
+        /// <returns>学院视图集合</returns>
         [Cache(CacheMethod.Get)]
         IEnumerable<SchoolView> GetAll();
-
-        /// <summary>
-        /// 获取学院ID
-        /// </summary>
-        /// <param name="schoolName"></param>
-        /// <returns></returns>
-        [Cache(CacheMethod.Get)]
-        string GetSchoolID(string schoolName);
     }
 }

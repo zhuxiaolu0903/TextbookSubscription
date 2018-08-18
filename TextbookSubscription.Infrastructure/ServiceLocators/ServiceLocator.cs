@@ -1,13 +1,10 @@
-﻿
-namespace TextbookSubscription.Infrastructure.ServiceLocators
+﻿namespace TextbookSubscription.Infrastructure.ServiceLocators
 {
 
     using Microsoft.Practices.ServiceLocation;
     using Microsoft.Practices.Unity;
-    using Microsoft.Practices.Unity.Configuration;
     using System;
     using System.Linq;
-    using System.Configuration;
     using System.Collections.Generic;
     using System.Reflection;
 

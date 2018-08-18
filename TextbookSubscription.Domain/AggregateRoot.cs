@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TextbookSubscription.Domain
 {
@@ -41,9 +37,8 @@ namespace TextbookSubscription.Domain
         /// <returns>当前Object的哈希代码。</returns>
         public override int GetHashCode()
         {
-            return this.ID.GetHashCode();
+            return ID.GetHashCode();
         }
-
 
     }
 }

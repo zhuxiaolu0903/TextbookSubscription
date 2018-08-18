@@ -285,7 +285,6 @@
     <Content Include="ImportDeclaration.aspx" />
     <Content Include="Modify.aspx" />
     <Content Include="ModifyDeclaration.aspx" />
-    <Content Include="TeachingClassDetail.aspx" />
     <Content Include="MessageWindows\AddDeclaration.aspx" />
     <Content Include="MessageWindows\QueryTextbookNameByIsbn.aspx" />
     <Content Include="MessageWindows\TeachingClassDetail.aspx" />
@@ -466,13 +465,6 @@
       <DependentUpon>ModifyDeclaration.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TeachingClassDetail.aspx.cs">
-      <DependentUpon>TeachingClassDetail.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="TeachingClassDetail.aspx.designer.cs">
-      <DependentUpon>TeachingClassDetail.aspx</DependentUpon>
-    </Compile>
     <Compile Include="UnityBootstrapper.cs" />
     <Compile Include="MessageWindows\AddDeclaration.aspx.cs">
       <DependentUpon>AddDeclaration.aspx</DependentUpon>

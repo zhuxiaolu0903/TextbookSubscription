@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace TextbookSubscription.Domain.Entity
+﻿namespace TextbookSubscription.Domain.Entity
 {
     public class Department: AggregateRoot
     {
@@ -14,17 +8,17 @@ namespace TextbookSubscription.Domain.Entity
         public string DepartmentID { get; set; }
 
         /// <summary>
-        /// 教研室名称
-        /// </summary>
-        public string DepartmentName { get; set; }
-
-        /// <summary>
         /// 学院ID
         /// </summary>
         public string SchoolID { get; set; }
 
         /// <summary>
-        /// 
+        /// 教研室名称
+        /// </summary>
+        public string DepartmentName { get; set; }
+
+        /// <summary>
+        /// 联系人
         /// </summary>
         public string Contact { get; set; }
 

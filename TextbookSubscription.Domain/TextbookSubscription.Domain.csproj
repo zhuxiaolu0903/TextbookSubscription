@@ -58,7 +58,6 @@
     <Compile Include="Entity\Department.cs" />
     <Compile Include="Entity\ProfessionalClass.cs" />
     <Compile Include="Entity\School.cs" />
-    <Compile Include="Entity\TextBook.cs" />
     <Compile Include="IAggregateRoot.cs" />
     <Compile Include="IEFRepositoryDbContext.cs" />
     <Compile Include="IEntity.cs" />

@@ -1,13 +1,12 @@
-﻿using Microsoft.Practices.ServiceLocation;
-using Microsoft.Practices.Unity;
-using System;
-using System.Linq;
-using System.Collections.Generic;
-using System.Reflection;
-
-
-namespace TextbookSubscription.Infrastructure.ServiceLocators
+﻿namespace TextbookSubscription.Infrastructure.ServiceLocators
 {
+    using Microsoft.Practices.ServiceLocation;
+    using Microsoft.Practices.Unity;
+    using System;
+    using System.Linq;
+    using System.Collections.Generic;
+    using System.Reflection;
+
     /// <summary>
     /// Unity与ServiceLocator的适配器
     /// </summary>
