@@ -1,6 +1,5 @@
 ﻿namespace TextbookSubscription.Infrastructure
 {
-
     /// <summary>
     /// 工作单元
     /// </summary>

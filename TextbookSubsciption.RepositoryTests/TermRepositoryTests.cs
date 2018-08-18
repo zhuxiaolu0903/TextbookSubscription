@@ -8,13 +8,12 @@ namespace TextbookSubscription.RepositoryTests
     [TestClass]
     public class TermRepositoryTests
     {
-
-        public TestContext TestContext { get; set; }
+        TestContext TestContext { get; set; }
+        TermRepository rep = new TermRepository(new EFRepositoryDbContext());
 
         [TestMethod]
         public void RetriveAllTerm()
         {
-            TermRepository rep = new TermRepository(new EFRepositoryDbContext());
             //SELECT COUNT(*) FROM Term = 16
             int totalCount = 16;
             var termList = rep.GetAll();

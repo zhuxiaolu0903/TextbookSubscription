@@ -8,12 +8,12 @@ namespace TextbookSubscription.RepositoryTests
     [TestClass]
     public class ProfessionalClassRepositoryTests
     {
-        public TestContext TestContext { get; set; }
+        TestContext TestContext { get; set; }
+        ProfessionalClassRepository rep = new ProfessionalClassRepository(new EFRepositoryDbContext());
 
         [TestMethod]
         public void RetriveAllClass()
         {
-            ProfessionalClassRepository rep = new ProfessionalClassRepository(new EFRepositoryDbContext());
             //SELECT COUNT(*) FROM ProfessionalClass = 1868
             int totalCount = 1868;
             var termList = rep.GetAll();

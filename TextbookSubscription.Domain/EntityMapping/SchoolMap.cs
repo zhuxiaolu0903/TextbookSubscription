@@ -10,7 +10,6 @@ namespace TextbookSubscription.Domain.EntityMapping
         {
             //PrimaryKey
             HasKey(t => t.SchoolID);
-            //Property(t => t.SchoolID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             //Properties
             Property(t => t.SchoolID).IsRequired();
@@ -22,8 +21,8 @@ namespace TextbookSubscription.Domain.EntityMapping
             //Table
             ToTable("School", "dbo");
 
+            //Ignore
             Ignore(t => t.ID);
-            //Ignore(t=>t.)
         }
     }
 }

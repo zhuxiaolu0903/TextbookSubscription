@@ -8,24 +8,25 @@
 
     public class TermAppl : ITermAppl
     {
-        private ITermRepository _rep;
+        private ITermRepository _termRep;
         private ITypeAdapter _adpater;
-        public TermAppl(ITermRepository rep, ITypeAdapter adapter)
+
+        public TermAppl(ITermRepository termRep, ITypeAdapter adapter)
         {
-            _rep = rep;
+            _termRep = termRep;
             _adpater = adapter;
         }
+
         public IEnumerable<TermView> GetAll()
         {
-            
-            var termList = _rep.GetAll();
-            return _adpater.Adapt<TermView>(termList);
+            var termViewList = _termRep.GetAll();
+            return _adpater.Adapt<TermView>(termViewList);
         }
 
         public TermView GetCurrent()
         {
-            var term = _rep.Single(t => t.IsCurrentTerm == "1");
-            return _adpater.Adapt<TermView>(term);
+            var termView = _termRep.Single(t => t.IsCurrentTerm == "1");
+            return _adpater.Adapt<TermView>(termView);
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿namespace TextbookSubscription.Infrastructure
 {
-
     using System.Text.RegularExpressions;
 
     public static class StringExtensionMethods

@@ -9,14 +9,14 @@
         /// <summary>
         /// 获得全部学期列表
         /// </summary>
-        /// <returns></returns>
+        /// <returns>所有学期视图</returns>
         [Cache(CacheMethod.Get)]
         IEnumerable<TermView> GetAll();
 
         /// <summary>
         /// 获得当前学期
         /// </summary>
-        /// <returns></returns>
+        /// <returns>当前学期视图</returns>
         [Cache(CacheMethod.Get)]
         TermView GetCurrent();
     }

@@ -8,18 +8,17 @@ namespace TextbookSubscription.Domain.EntityMapping
     {
         public DepartmentMap()
         {
-            //主键
-            HasKey(t => t.DepartmentID);
-            //Property(t => t.DepartmentID).HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            //Primary Key
+            HasKey(d => d.DepartmentID);
 
-            //属性
-            Property(t => t.DepartmentName).IsRequired();
-            Property(t => t.SchoolID).IsRequired();
-            Property(t => t.Telephone).HasMaxLength(11);
+            //Properties
+            Property(d => d.DepartmentName).IsRequired();
+            Property(d => d.Telephone).HasMaxLength(11);
 
-            //对应数据库表
+            //Table && Column Mappings
             ToTable("Department", "dbo");
 
+            //Ignore
             Ignore(t => t.ID);
         }
     }

@@ -1,6 +1,5 @@
 ﻿namespace TextbookSubscription.Infrastructure.Logger
 {
-
     using System;
 
     public interface ILogger

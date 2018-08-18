@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using TextbookSubscription.Domain.IRepositories;
 using TextbookSubscription.IApplication;
 using TextbookSubscription.Infrastructure;
@@ -12,25 +8,24 @@ namespace TextbookSubscription.Application
 {
     public class DepartmentAppl : IDepartmentAppl
     {
-        private IDepartmentRepository _rep;
+        private IDepartmentRepository _departmentRep;
+        private ISchoolRepository _schoolRep;
         private ITypeAdapter _adapter;
 
-        private ISchoolAppl _schoolAppl;
-
-        //private SchoolView _schoolView;
-
-        public DepartmentAppl(IDepartmentRepository rep, ITypeAdapter adapter, ISchoolAppl schoolAppl)
+        public DepartmentAppl(IDepartmentRepository departmentRep, ISchoolRepository schoolRep,ITypeAdapter adapter)
         {
-            _rep = rep;
+            _departmentRep = departmentRep;
+            _schoolRep = schoolRep;
             _adapter = adapter;
-            _schoolAppl = schoolAppl;
         }
 
         public IEnumerable<DepartmentView> GetDepartmentList(string schoolName)
         {
-            var schoolID = _schoolAppl.GetSchoolID(schoolName);
-            var departmentList = _rep.Find(d => d.SchoolID == schoolID);
-            return _adapter.Adapt<DepartmentView>(departmentList);
+            var schoolId = _schoolRep.GetSchoolIDByName(schoolName);
+            var departmentList = _departmentRep.GetDepartmentBySchoolID(schoolId);
+            var departmentViewList = _adapter.Adapt<DepartmentView>(departmentList);
+
+            return departmentViewList;
         }
     }
 }

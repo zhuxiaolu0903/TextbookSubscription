@@ -1,5 +1,7 @@
 ﻿namespace TextbookSubscription.Domain.Entity
 {
+    using System.Collections.Generic;
+
     public class School:AggregateRoot
     {
         /// <summary>

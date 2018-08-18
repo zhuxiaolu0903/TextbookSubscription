@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace TextbookSubscription.Infrastructure
+﻿namespace TextbookSubscription.Infrastructure
 {
+    using System;
+
     /// <summary>
     /// 实现IDisposable的对象
     /// </summary>
