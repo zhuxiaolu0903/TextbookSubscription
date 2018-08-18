@@ -31,49 +31,49 @@ namespace TextbookManage.WebUI {
         protected global::Telerik.Web.UI.RadStyleSheetManager RadStyleSheetManager1;
         
         /// <summary>
-        /// RadScriptManager1 控件。
+        /// RadScriptManager 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
+        protected global::Telerik.Web.UI.RadScriptManager RadScriptManager;
         
         /// <summary>
-        /// RadSkinManager1 控件。
+        /// RadSkinManager 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Telerik.Web.UI.RadSkinManager RadSkinManager1;
+        protected global::Telerik.Web.UI.RadSkinManager RadSkinManager;
         
         /// <summary>
-        /// RadToolTipManager1 控件。
+        /// RadToolTipManager 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Telerik.Web.UI.RadToolTipManager RadToolTipManager1;
+        protected global::Telerik.Web.UI.RadToolTipManager RadToolTipManager;
         
         /// <summary>
-        /// RadFormDecorator1 控件。
+        /// RadFormDecorator 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Telerik.Web.UI.RadFormDecorator RadFormDecorator1;
+        protected global::Telerik.Web.UI.RadFormDecorator RadFormDecorator;
         
         /// <summary>
-        /// RadCodeBlock1 控件。
+        /// RadCodeBlock 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::Telerik.Web.UI.RadCodeBlock RadCodeBlock1;
+        protected global::Telerik.Web.UI.RadCodeBlock RadCodeBlock;
         
         /// <summary>
         /// RadAjaxManager1 控件。
